@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+apply plugin: "jp.leafytree.android-scala"
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "c.mars.scaloidsample"
+        minSdkVersion 15
+        targetSdkVersion 22
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFile file("proguard-rules.txt")
+        }
+
+        release {
+            minifyEnabled true
+            proguardFile file("proguard-rules.txt")
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:22.1.1'
+    compile "org.scala-lang:scala-library:2.11.6"
+    compile "org.scaloid:scaloid_2.11:4.0-RC1+"
+}
